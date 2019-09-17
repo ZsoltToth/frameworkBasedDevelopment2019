@@ -12,6 +12,7 @@
         <module>service</module>
         <module>dao-memory</module>
         <module>controller</module>
+        <module>web</module>
     </modules>
     <packaging>pom</packaging>
 
