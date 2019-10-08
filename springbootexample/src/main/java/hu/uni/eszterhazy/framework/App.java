@@ -30,6 +30,6 @@ public class App implements CommandLineRunner
 //        for (String beanName :context.getBeanDefinitionNames()){
 //            System.out.println(beanName + " => " + context.getBean(beanName).getClass().getName());
 //        }
-        System.out.println(context.getBean("wellcome"));
+        System.out.println(context.getBean("welcome"));
     }
 }

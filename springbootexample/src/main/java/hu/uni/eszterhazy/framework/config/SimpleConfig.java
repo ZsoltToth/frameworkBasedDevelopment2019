@@ -1,4 +1,4 @@
-package hu.uni.eszterhazy.framework;
+package hu.uni.eszterhazy.framework.config;
 
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 public class SimpleConfig {
 
     @Bean
-    public String wellcome(){
-        return "Hello World";
+    public String welcome(){
+        return "Hello World -- Simple Configuration";
     }
 }
