@@ -1,27 +1,28 @@
 package hu.uni.eszterhazy.framework.api;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Product {
 
-    private int productId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long productId;
     private String name;
     private double price;
 
     public Product() {
     }
 
-    public Product(int productId, String name, double price) {
-        this.productId = productId;
+    public Product(String name, double price) {
+
         this.name = name;
         this.price = price;
     }
 
-    public int getProductId() {
-        return productId;
-    }
-
-    public void setProductId(int productId) {
-        this.productId = productId;
-    }
 
     public String getName() {
         return name;
