@@ -11,4 +11,6 @@ public interface ProductQueryService {
     Collection<Product> queryProductsMoreExpensiveThan(double price);
 
     void addProduct(Product product);
+
+    void updateProduct(String name, double price);
 }

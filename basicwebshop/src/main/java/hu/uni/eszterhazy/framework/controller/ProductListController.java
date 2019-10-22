@@ -5,13 +5,13 @@ import hu.uni.eszterhazy.framework.api.ProductQueryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.Collection;
+
+import static org.springframework.http.HttpMethod.POST;
 
 @RestController
 @RequestMapping(value = "/products")
@@ -42,6 +42,13 @@ public class ProductListController {
       return productQueryService.queryProductsCheaperThan(price);
     }
 
+    @RequestMapping(value = "/price/gt")
+    public Collection<Product> listProductByPriceMoreThan(
+            @RequestParam(value = "price") double price
+    ){
+        return productQueryService.queryProductsMoreExpensiveThan(price);
+    }
+
 
     @RequestMapping(value = "/record")
     public void recordProduct(
@@ -49,4 +56,12 @@ public class ProductListController {
             @RequestParam(name = "price", required = true) double price){
         productQueryService.addProduct(new Product(name,price));
     }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public void updateProduct(
+            @RequestParam(name = "name", required = true) String name,
+            @RequestParam(name = "price", required = true) double price){
+        productQueryService.updateProduct(name,price);
+    }
+
 }

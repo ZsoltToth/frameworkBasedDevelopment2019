@@ -12,4 +12,7 @@ public interface ProductRepository extends CrudRepository<Product,Long> {
     List<Product> findByNameIsLike(String name);
 
     List<Product> findByNameStartingWith(String name);
+
+    List<Product> findByPriceLessThan(double price);
+    List<Product> findByPriceGreaterThan(double price);
 }
