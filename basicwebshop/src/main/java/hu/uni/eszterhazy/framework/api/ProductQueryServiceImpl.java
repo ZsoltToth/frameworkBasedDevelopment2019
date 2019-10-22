@@ -17,4 +17,24 @@ public class ProductQueryServiceImpl implements ProductQueryService {
     public Collection<Product> allProducts() {
         return (Collection<Product>) productRepository.findAll();
     }
+
+    @Override
+    public Collection<Product> queryProductsByName(String name) {
+        return productRepository.findByNameStartingWith(name);
+    }
+
+    @Override
+    public Collection<Product> queryProductsCheaperThan(double price) {
+        return null;
+    }
+
+    @Override
+    public Collection<Product> queryProductsMoreExpensiveThan(double price) {
+        return null;
+    }
+
+    @Override
+    public void addProduct(Product product) {
+        productRepository.save(product);
+    }
 }
