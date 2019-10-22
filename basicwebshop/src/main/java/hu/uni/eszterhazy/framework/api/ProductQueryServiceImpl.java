@@ -57,4 +57,11 @@ public class ProductQueryServiceImpl implements ProductQueryService {
             productRepository.save(product);
         }
     }
+
+    @Override
+    public void deleteProduct(String name) {
+        for(Product product : productRepository.findByName(name)){
+            productRepository.delete(product);
+        }
+    }
 }

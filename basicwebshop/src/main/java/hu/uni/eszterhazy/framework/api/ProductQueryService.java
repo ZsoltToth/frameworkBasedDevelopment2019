@@ -13,4 +13,6 @@ public interface ProductQueryService {
     void addProduct(Product product);
 
     void updateProduct(String name, double price);
+
+    void deleteProduct(String name);
 }

@@ -64,4 +64,10 @@ public class ProductListController {
         productQueryService.updateProduct(name,price);
     }
 
+    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
+    public void updateProduct(
+            @RequestParam(name = "name", required = true) String name){
+        productQueryService.deleteProduct(name);
+    }
+
 }
