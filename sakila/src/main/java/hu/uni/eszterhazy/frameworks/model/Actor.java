@@ -1,4 +1,4 @@
-package hu.uni.eszterhazy.frameworks;
+package hu.uni.eszterhazy.frameworks.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
